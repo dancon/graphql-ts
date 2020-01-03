@@ -1,0 +1,11 @@
+{
+  "name": "graphql-ts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:dancon/graphql-ts.git",
+  "author": "houquan <houquan@bytedance.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.7.4"
+  }
+}
