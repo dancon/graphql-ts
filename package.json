@@ -2,10 +2,22 @@
   "name": "graphql-ts",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
   "repository": "git@github.com:dancon/graphql-ts.git",
   "author": "houquan <houquan@bytedance.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/graphql": "^14.5.0",
+    "@types/jest": "^24.0.25",
+    "jest": "^24.9.0",
+    "jest-extended": "^0.11.2",
+    "ts-jest": "^24.2.0",
+    "ts-node": "^8.6.1",
     "typescript": "^3.7.4"
+  },
+  "dependencies": {
+    "graphql": "^14.5.8"
   }
 }
