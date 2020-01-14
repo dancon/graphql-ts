@@ -5,10 +5,16 @@
  */
 
 import { ParseOption } from '../../language/parser'
+import { Source } from '../../language/source'
 import { BuildSchemaOptions } from './interface'
 
 export * from './interface'
 
-export function buildSchema(source: string, options?: BuildSchemaOptions & ParseOption) {
+/**
+ * 用来直接从 source doment 来创建 GraphQL schema 的辅助方法
+ * @param source
+ * @param options
+ */
+export function buildSchema(source: string | Source, options?: BuildSchemaOptions & ParseOption) {
 
 }

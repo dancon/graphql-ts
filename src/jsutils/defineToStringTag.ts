@@ -4,11 +4,8 @@
  * @version 1.0.0 | 2020-01-14 | john.hou      // initial version
  */
 
-// type Class<T = {}> = new (...args: any[]) => T
+type Class<T = {}> = new (...args: any[]) => T
 
-interface Class<T = unknown> {
-  new(): T
-}
 
 export default function defineToStringTag (classObject: Class) {
   if (typeof Symbol === 'function' && Symbol.toStringTag) {

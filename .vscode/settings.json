@@ -4,5 +4,6 @@
     "authorEmail": "870301137@qq.com",
     "forceToTop": true,
     "blankLinesAfter": 1
-  }
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
