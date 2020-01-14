@@ -1,7 +1,7 @@
 /**
  * @fileoverview
- * @author houquan | houquan@bytedance.com
- * @version 1.0.0 | 2020-01-13 | houquan      // initial version
+ * @author john.hou | 870301137@qq.com
+ * @version 1.0.0 | 2020-01-13 | john.hou      // initial version
  */
 
 export interface GraphQLSchemaValidationOptions  {
