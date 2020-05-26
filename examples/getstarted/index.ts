@@ -9,6 +9,13 @@ import { graphql, buildSchema } from 'graphql'
 const schema = buildSchema(`
   type Query {
     hello: String
+    person: Person!
+  }
+
+  """ human type """
+  type Person {
+    name: String!
+    age: Int!
   }
 `)
 

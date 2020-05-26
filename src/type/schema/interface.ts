@@ -9,3 +9,7 @@ export interface GraphQLSchemaValidationOptions  {
   // 默认为 false
   assumeValid?: boolean
 }
+
+export interface GraphQLSchemaConfig {
+  query?: any
+}
