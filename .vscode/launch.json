@@ -6,6 +6,19 @@
   "configurations": [
     {
       "type": "node",
+      "name": "Koa Server",
+      "program": "${workspaceFolder}/examples/koa-server/index.ts",
+      "request": "launch",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "outFiles": [
+        "${workspaceFolder}/build/**/*.js"
+      ]
+    },
+    {
+      "type": "node",
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": [

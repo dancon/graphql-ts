@@ -11,6 +11,7 @@
   "devDependencies": {
     "@types/graphql": "^14.5.0",
     "@types/jest": "^24.0.25",
+    "@types/koa": "^2.11.3",
     "@types/node": "^13.1.6",
     "jest": "^24.9.0",
     "jest-extended": "^0.11.2",
@@ -19,6 +20,8 @@
     "typescript": "^3.7.4"
   },
   "dependencies": {
-    "graphql": "^14.5.8"
+    "apollo-server-koa": "^2.15.1",
+    "graphql": "^15.3.0",
+    "koa": "^2.13.0"
   }
 }
