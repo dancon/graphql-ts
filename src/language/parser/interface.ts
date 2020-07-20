@@ -30,3 +30,6 @@ export interface ParseOption {
    */
   experimentalFragmentVariables?: boolean
 }
+
+
+export type OperationTypeNode = 'query' | 'mutation' | 'subscription'

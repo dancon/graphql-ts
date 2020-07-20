@@ -9,14 +9,32 @@ import { ApolloServer, gql } from 'apollo-server-koa'
 
 const typeDefs = gql`
   type Query {
-    hello: String
+    hello: Hello
+  }
+
+  type Hello {
+    name: String!
+    age: Int!
   }
 `
+
+interface Hello {
+  name: string
+  a: number
+}
 
 const resolvers = {
   Query: {
     hello() {
-      return 'hello, world!'
+      return {
+        name: 'hello world',
+        a: 10
+      }
+    }
+  },
+  Hello: {
+    age(hello: Hello) {
+      return hello.a + 10
     }
   }
 }
