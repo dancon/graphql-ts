@@ -10,9 +10,11 @@ import { isPunctuatorTokenKind } from 'graphql/language/lexer'
 import devAssert from '../../jsutils/devAssert'
 import inspect from '../../jsutils/inspect'
 import { TokenKind, TokenKindEnum } from '../tokenKind'
+import { NameNode } from '../ast'
 
 import { ParseOption, OperationTypeNode } from './interface'
 import { Source } from '../source'
+
 
 /**
  * 用来将 source 转化为 GraphQL Document
@@ -80,7 +82,37 @@ export class Parser {
     }
 
     const operation = this.parseOperationType()
+    let name
+    if (this.peek(TokenKind.NAME)) {
+      name = this.parseName()
+    }
 
+    return {
+      kind: Kind.OPERATION_DEFINITION,
+      operation,
+      name,
+      loc: this.loc(start)
+    }
+  }
+
+  /**
+   * 具名 query 是可以定义变量的
+   */
+  parseVariableDefinitions() {
+
+  }
+
+  /**
+   * 用来解析 operationName
+   */
+  parseName(): NameNode {
+    const token = this.expectToken(TokenKind.NAME)
+
+    return {
+      kind: Kind.NAME,
+      value: token.value as string,
+      loc: this.loc(token)
+    }
   }
 
   /**
@@ -107,7 +139,7 @@ export class Parser {
 
   }
 
-  loc (startToken: Token): Location | void {
+  loc (startToken: Token): Location | undefined {
     if (this.options?.noLocation !== true) {
       return new Location(startToken, this.lexer.lastToken, this.lexer.source)
     }

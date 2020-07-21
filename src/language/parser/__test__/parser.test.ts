@@ -42,4 +42,23 @@ describe('parser', () => {
 
     expect(optype).toEqual('query')
   })
+
+  test('parseOperationName', () => {
+    const queryWithName = `
+      query helloName {
+        hello
+      }
+    `
+
+    const parser = new Parser(queryWithName)
+    parser.move()
+    parser.move()
+    const optName = parser.parseName()
+
+    expect(optName.value).toEqual('helloName')
+  })
+})
+
+test('parseVariableDefinitions', () => {
+
 })

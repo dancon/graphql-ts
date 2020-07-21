@@ -4,3 +4,4 @@
  * @version 1.0.0 | 2020-01-15 | john.hou      // initial version
  */
 
+export * from './interface'
